@@ -1,7 +1,4 @@
 # These are supported funding model platforms
 
-github: [xtractiion]
-# patreon: xtractiion
-# ko_fi: xtractiion
-# buy_me_a_coffee: xtractiion
-# custom: ['https://paypal.me/yourpaypallink']
+# Note: For UPI payments in India, see README.md
+custom: ['https://github.com/xtractiion/self.attendance#support']

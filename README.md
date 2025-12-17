@@ -227,6 +227,15 @@ If you find this app useful, please:
 - 💡 **Suggest features** you'd like to see
 - 🔄 **Share** with friends who need attendance tracking
 
+### 💖 Want to Sponsor This Project?
+
+If you'd like to support the development of Self Attendance, please contact me:
+
+- 📧 **Email:** farhanfp20@gmail.com
+- 💬 **Telegram:** [@hourslow](https://t.me/hourslow)
+
+Your support helps me continue improving this app and adding new features!
+
 ---
 
 <p align="center">
