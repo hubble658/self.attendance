@@ -1,3 +1,7 @@
+> **❓ Do you have a Google Play Console Account?**
+>
+> I am active looking for a **Google Play Console account** to publish this app. If you have an account and are willing to help me release this build to the Play Store, please contact me! Your support would help bring **Self Attendance** to thousands of students.
+
 # Self Attendance
 
 **Self Attendance** is a comprehensive, privacy-focused academic tracking tool designed for effortless attendance management. Built with modern Android technologies, it revolutionizes how students manage their class attendance by moving beyond simple counters to a **calendar-first approach**.
