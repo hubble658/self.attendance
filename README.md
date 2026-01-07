@@ -61,17 +61,11 @@ The app doesn't just show a percentage. It tells you what to do:
 
 ## App Screenshots
 
-| Dashboard | Calendar | Insights |
-| :---: | :---: | :---: |
+| | | |
+|:---:|:---:|:---:|
 | <img src="./image%20that%20have%20to%20add%20in%20readme.md%20file%20for%20my%20github%20showcase/WhatsApp%20Image%202026-01-07%20at%201.33.10%20PM.jpeg" width="250" /> | <img src="./image%20that%20have%20to%20add%20in%20readme.md%20file%20for%20my%20github%20showcase/WhatsApp%20Image%202026-01-07%20at%201.33.10%20PM%20(1).jpeg" width="250" /> | <img src="./image%20that%20have%20to%20add%20in%20readme.md%20file%20for%20my%20github%20showcase/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM.jpeg" width="250" /> |
-| **Details** | **Add Subject** | **History** |
 | <img src="./image%20that%20have%20to%20add%20in%20readme.md%20file%20for%20my%20github%20showcase/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM%20(1).jpeg" width="250" /> | <img src="./image%20that%20have%20to%20add%20in%20readme.md%20file%20for%20my%20github%20showcase/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM%20(2).jpeg" width="250" /> | <img src="./image%20that%20have%20to%20add%20in%20readme.md%20file%20for%20my%20github%20showcase/WhatsApp%20Image%202026-01-07%20at%201.33.12%20PM.jpeg" width="250" /> |
-| **Updates** | **Settings** | **Menu** |
-| <img src="./image%20that%20have%20to%20add%20in%20readme.md%20file%20for%20my%20github%20showcase/WhatsApp%20Image%202026-01-07%20at%201.33.12%20PM%20(1).jpeg" width="250" /> | <img src="./image%20that%20have%20to%20add%20in%20readme.md%20file%20for%20my%20github%20showcase/WhatsApp%20Image%202026-01-07%20at%201.33.12%20PM%20(2).jpeg" width="250" /> | <img src="./image%20that%20have%20to%20add%20in%20readme.md%20file%20for%20my%20github%20showcase/WhatsApp%20Image%202026-01-07%20at%201.33.13%20PM.jpeg" width="250" /> |
-
-<div align="center">
-  <img src="./image%20that%20have%20to%20add%20in%20readme.md%20file%20for%20my%20github%20showcase/WhatsApp%20Image%202026-01-07%20at%201.33.13%20PM%20(1).jpeg" width="250" />
-</div>
+| <img src="./image%20that%20have%20to%20add%20in%20readme.md%20file%20for%20my%20github%20showcase/WhatsApp%20Image%202026-01-07%20at%201.33.12%20PM%20(2).jpeg" width="250" /> | <img src="./image%20that%20have%20to%20add%20in%20readme.md%20file%20for%20my%20github%20showcase/WhatsApp%20Image%202026-01-07%20at%201.33.13%20PM.jpeg" width="250" /> | <img src="./image%20that%20have%20to%20add%20in%20readme.md%20file%20for%20my%20github%20showcase/WhatsApp%20Image%202026-01-07%20at%201.33.13%20PM%20(1).jpeg" width="250" /> |
 
 ---
 
