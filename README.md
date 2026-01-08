@@ -55,7 +55,6 @@ The app doesn't just show a percentage. It tells you what to do:
 ### 🎨 Modern Material You Design
 *   **Dynamic Theming**: Adapts to your device wallpaper.
 *   **Expressive UI**: Fluid animations and clean typography (One UI Sans).
-*   **Dark Mode**: Fully optimized OLED-friendly dark theme.
 
 ### 💾 Backup & Restore
 *   **Full Data Export**: Save your database and settings locally.
