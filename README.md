@@ -5,6 +5,20 @@
 # Self Attendance
 
 <p align="center">
+  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.10%20PM.jpeg" width="200" style="border-radius:26px;"/>
+  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.10%20PM%20(1).jpeg" width="200" style="border-radius:26px;"/>
+  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM.jpeg" width="200" style="border-radius:26px;"/>
+  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM%20(1).jpeg" width="200" style="border-radius:26px;"/>
+</p>
+
+<p align="center">
+  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM%20(2).jpeg" width="200" style="border-radius:26px;"/>
+  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.12%20PM.jpeg" width="200" style="border-radius:26px;"/>
+  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.12%20PM%20(2).jpeg" width="200" style="border-radius:26px;"/>
+  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.13%20PM.jpeg" width="200" style="border-radius:26px;"/>
+</p>
+
+<p align="center">
     <a href="https://github.com/xtractiion/self.attendance/releases/latest">
         <img src="https://img.shields.io/github/v/release/xtractiion/self.attendance?include_prereleases&logo=github&style=for-the-badge&label=Latest%20Release" alt="Latest Release">
     </a>
@@ -14,6 +28,8 @@
     <img src="https://img.shields.io/badge/Android-10%2B-green?style=for-the-badge&logo=android" alt="Android 10+">
     <img src="https://img.shields.io/badge/Kotlin-100%25-purple?style=for-the-badge&logo=kotlin" alt="Kotlin">
 </p>
+
+---
 
 **Self Attendance** is a comprehensive, privacy-focused academic tracking tool designed for effortless attendance management. Built with modern Android technologies, it revolutionizes how students manage their class attendance by moving beyond simple counters to a **calendar-first approach**.
 
@@ -73,16 +89,6 @@ The app doesn't just show a percentage. It tells you what to do:
 
 ---
 
-## App Screenshots
-
-| | | |
-|:---:|:---:|:---:|
-| <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.10%20PM.jpeg" width="250" /> | <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.10%20PM%20(1).jpeg" width="250" /> | <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM.jpeg" width="250" /> |
-| <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM%20(1).jpeg" width="250" /> | <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM%20(2).jpeg" width="250" /> | <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.12%20PM.jpeg" width="250" /> |
-| <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.12%20PM%20(2).jpeg" width="250" /> | <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.13%20PM.jpeg" width="250" /> | <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.13%20PM%20(1).jpeg" width="250" /> |
-
----
-
 ## 🛠️ Usage
 
 ### Quick Start
@@ -126,3 +132,4 @@ If you find this app useful, please:
 *   💡 **Suggest features** you'd like to see.
 
 **Built with ❤️ by Md Farhan**
+
