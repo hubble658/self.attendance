@@ -4,6 +4,17 @@
 
 # Self Attendance
 
+<p align="center">
+    <a href="https://github.com/xtractiion/self.attendance/releases/latest">
+        <img src="https://img.shields.io/github/v/release/xtractiion/self.attendance?include_prereleases&logo=github&style=for-the-badge&label=Latest%20Release" alt="Latest Release">
+    </a>
+    <a href="https://github.com/xtractiion/self.attendance/releases">
+        <img src="https://img.shields.io/github/downloads/xtractiion/self.attendance/total?logo=github&style=for-the-badge" alt="Total Downloads">
+    </a>
+    <img src="https://img.shields.io/badge/Android-10%2B-green?style=for-the-badge&logo=android" alt="Android 10+">
+    <img src="https://img.shields.io/badge/Kotlin-100%25-purple?style=for-the-badge&logo=kotlin" alt="Kotlin">
+</p>
+
 **Self Attendance** is a comprehensive, privacy-focused academic tracking tool designed for effortless attendance management. Built with modern Android technologies, it revolutionizes how students manage their class attendance by moving beyond simple counters to a **calendar-first approach**.
 
 Unlike traditional apps that only show percentages, Self Attendance provides an intuitive visual calendar interface where you can mark attendance for specific dates, view patterns at a glance, and get smart **AI-powered insights** about your bunk allowance.
@@ -99,7 +110,7 @@ The app doesn't just show a percentage. It tells you what to do:
 
 ## Installation
 
-You can download the latest APK from the [Releases](https://github.com/mhdfarhanhere/Driftly/releases) section.
+You can download the latest APK from the [Releases](https://github.com/xtractiion/self.attendance/releases) section.
 
 1.  Download `app-arm64-v8a-release.apk` (Recommended).
 2.  Install on your Android device.
