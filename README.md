@@ -5,17 +5,20 @@
 # Self Attendance
 
 <p align="center">
-  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.10%20PM.jpeg" width="200" style="border-radius:26px;"/>
-  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.10%20PM%20(1).jpeg" width="200" style="border-radius:26px;"/>
-  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM.jpeg" width="200" style="border-radius:26px;"/>
-  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM%20(1).jpeg" width="200" style="border-radius:26px;"/>
+  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.10%20PM.jpeg" width="31%" style="border-radius:26px; margin: 1px;"/>
+  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.10%20PM%20(1).jpeg" width="31%" style="border-radius:26px; margin: 1px;"/>
+  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM.jpeg" width="31%" style="border-radius:26px; margin: 1px;"/>
 </p>
 
 <p align="center">
-  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM%20(2).jpeg" width="200" style="border-radius:26px;"/>
-  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.12%20PM.jpeg" width="200" style="border-radius:26px;"/>
-  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.12%20PM%20(2).jpeg" width="200" style="border-radius:26px;"/>
-  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.13%20PM.jpeg" width="200" style="border-radius:26px;"/>
+  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM%20(1).jpeg" width="31%" style="border-radius:26px; margin: 1px;"/>
+  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM%20(2).jpeg" width="31%" style="border-radius:26px; margin: 1px;"/>
+  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.12%20PM.jpeg" width="31%" style="border-radius:26px; margin: 1px;"/>
+</p>
+
+<p align="center">
+  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.12%20PM%20(2).jpeg" width="31%" style="border-radius:26px; margin: 1px;"/>
+  <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.13%20PM.jpeg" width="31%" style="border-radius:26px; margin: 1px;"/>
 </p>
 
 <p align="center">
