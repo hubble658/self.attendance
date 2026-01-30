@@ -50,7 +50,8 @@ fun IntPreferenceItemView(
 
                 RoundedCornerCard(
                     modifier = Modifier.fillMaxWidth(),
-                    roundedCornerShape = shape
+                    roundedCornerShape = shape,
+                    paddingValues = androidx.compose.foundation.layout.PaddingValues(vertical = 1.5.dp, horizontal = 15.dp)
                 )
                 {
                     Row(

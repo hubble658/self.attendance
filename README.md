@@ -1,8 +1,32 @@
 > **❓ Do you have a Google Play Console Account?**
 >
-> I am active looking for a **Google Play Console account** to publish this app. If you have an account and are willing to help me release this build to the Play Store, please contact me! Your support would help bring **Self Attendance** to thousands of students.
+> I am active looking for a **Google Play Console account** to publish this app. If you have an account and are willing to help me release this build to the Play Store, please contact me!
 
 # Self Attendance
+
+<p align="center">
+  <img src="./right%20now/img%201.jpeg" width="31%" style="border-radius:26px; margin: 2px;"/>
+  <img src="./right%20now/img%202.jpeg" width="31%" style="border-radius:26px; margin: 2px;"/>
+  <img src="./right%20now/img%203.jpeg" width="31%" style="border-radius:26px; margin: 2px;"/>
+</p>
+
+<p align="center">
+  <img src="./right%20now/img%204.jpeg" width="31%" style="border-radius:26px; margin: 2px;"/>
+  <img src="./right%20now/img%205.jpeg" width="31%" style="border-radius:26px; margin: 2px;"/>
+</p>
+
+<p align="center">
+    <a href="https://github.com/xtractiion/self.attendance/releases/latest">
+        <img src="https://img.shields.io/github/v/release/xtractiion/self.attendance?include_prereleases&logo=github&style=for-the-badge&label=Latest%20Release" alt="Latest Release">
+    </a>
+    <a href="https://github.com/xtractiion/self.attendance/releases">
+        <img src="https://img.shields.io/github/downloads/xtractiion/self.attendance/total?logo=github&style=for-the-badge" alt="Total Downloads">
+    </a>
+    <img src="https://img.shields.io/badge/Android-10%2B-green?style=for-the-badge&logo=android" alt="Android 10+">
+    <img src="https://img.shields.io/badge/Kotlin-100%25-purple?style=for-the-badge&logo=kotlin" alt="Kotlin">
+</p>
+
+---
 
 **Self Attendance** is a comprehensive, privacy-focused academic tracking tool designed for effortless attendance management. Built with modern Android technologies, it revolutionizes how students manage their class attendance by moving beyond simple counters to a **calendar-first approach**.
 
@@ -10,7 +34,7 @@ Unlike traditional apps that only show percentages, Self Attendance provides an 
 
 ---
 
-## 🚀 New in v2.0.0: Timetable Notification System
+## 🚀 New in v2.2.0: Timetable Notification System
 
 The latest update introduces a highly requested, fully automated notification engine.
 
@@ -55,21 +79,10 @@ The app doesn't just show a percentage. It tells you what to do:
 ### 🎨 Modern Material You Design
 *   **Dynamic Theming**: Adapts to your device wallpaper.
 *   **Expressive UI**: Fluid animations and clean typography (One UI Sans).
-*   **Dark Mode**: Fully optimized OLED-friendly dark theme.
 
 ### 💾 Backup & Restore
 *   **Full Data Export**: Save your database and settings locally.
 *   **Easy Restore**: Seamlessly migrate data to a new device.
-
----
-
-## App Screenshots
-
-| | | |
-|:---:|:---:|:---:|
-| <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.10%20PM.jpeg" width="250" /> | <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.10%20PM%20(1).jpeg" width="250" /> | <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM.jpeg" width="250" /> |
-| <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM%20(1).jpeg" width="250" /> | <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.11%20PM%20(2).jpeg" width="250" /> | <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.12%20PM.jpeg" width="250" /> |
-| <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.12%20PM%20(2).jpeg" width="250" /> | <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.13%20PM.jpeg" width="250" /> | <img src="./src/WhatsApp%20Image%202026-01-07%20at%201.33.13%20PM%20(1).jpeg" width="250" /> |
 
 ---
 
@@ -100,7 +113,7 @@ The app doesn't just show a percentage. It tells you what to do:
 
 ## Installation
 
-You can download the latest APK from the [Releases](https://github.com/mhdfarhanhere/Driftly/releases) section.
+You can download the latest APK from the [Releases](https://github.com/xtractiion/self.attendance/releases) section.
 
 1.  Download `app-arm64-v8a-release.apk` (Recommended).
 2.  Install on your Android device.

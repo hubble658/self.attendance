@@ -16,8 +16,8 @@ android {
         applicationId = "com.self.attendance"
         minSdk = 26
         targetSdk = 36
-        versionCode = 15
-        versionName = "2.0.0"
+        versionCode = 17
+        versionName = "2.2.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -121,7 +121,6 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.navigation.compose)
-    implementation(libs.core.splashscreen)
 
     implementation(libs.material)
     implementation(libs.material3)

@@ -143,12 +143,16 @@ fun EditSubjectDialog(
                     }
                     
                     val timetableButtonInteraction = remember { MutableInteractionSource() }
-                    FilledTonalButton(
+                    Button(
                         onClick = { showTimetableDialog = true },
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(56.dp),  // Make it thicker
-                        ) {
+                            .height(56.dp),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MaterialTheme.colorScheme.primary,
+                            contentColor = MaterialTheme.colorScheme.onPrimary
+                        )
+                    ) {
                         Icon(
                             Icons.Default.Schedule,
                             contentDescription = null

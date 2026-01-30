@@ -374,27 +374,33 @@ fun TimetableInputBottomSheet(
                 }
             }
             
-            // Validation Calculation
-            val startHr = hours[startHourIndex].toInt()
-            val startMin = minutes[startMinuteIndex].toInt()
+            // ========== TIME CONVERSION: 12-hour to 24-hour ==========
+            // This conversion is TIMEZONE-AGNOSTIC - it only deals with integers
+            // No Date/Calendar objects are used to prevent timezone issues
+            
+            // START TIME CONVERSION
+            val startHr = hours[startHourIndex].toInt()  // 1-12
+            val startMin = minutes[startMinuteIndex].toInt()  // 0-59
             val startIsPm = startAmPmIndex == 1
             val startHour24 = when {
-                startIsPm && startHr != 12 -> startHr + 12
-                !startIsPm && startHr == 12 -> 0
-                else -> startHr
+                startIsPm && startHr != 12 -> startHr + 12  // 1 PM = 13, 11 PM = 23
+                !startIsPm && startHr == 12 -> 0            // 12 AM = 00
+                else -> startHr                              // 1-11 AM = 1-11, 12 PM = 12
             }
             val startTotalMinutes = startHour24 * 60 + startMin
 
-            val endHr = hours[endHourIndex].toInt()
-            val endMin = minutes[endMinuteIndex].toInt()
+            // END TIME CONVERSION
+            val endHr = hours[endHourIndex].toInt()  // 1-12
+            val endMin = minutes[endMinuteIndex].toInt()  // 0-59
             val endIsPm = endAmPmIndex == 1
             val endHour24 = when {
-                endIsPm && endHr != 12 -> endHr + 12
-                !endIsPm && endHr == 12 -> 0
-                else -> endHr
+                endIsPm && endHr != 12 -> endHr + 12  // 1 PM = 13, 11 PM = 23
+                !endIsPm && endHr == 12 -> 0          // 12 AM = 00
+                else -> endHr                          // 1-11 AM = 1-11, 12 PM = 12
             }
             val endTotalMinutes = endHour24 * 60 + endMin
             
+            // VALIDATION: End time must be after start time
             val isValid = endTotalMinutes > startTotalMinutes
 
             // Add to Timetable Button
@@ -404,6 +410,9 @@ fun TimetableInputBottomSheet(
                     weakHaptic()
                     val dayOfWeek = selectedDayIndex + 1
                     
+                    // IMPORTANT: Convert 12-hour to 24-hour format WITHOUT using any Date/Calendar objects
+                    // This prevents timezone-related bugs on different devices
+                    // Direct integer calculation ensures the time is stored exactly as selected
                     val startTime = String.format("%02d:%02d", startHour24, startMin)
                     val endTime = String.format("%02d:%02d", endHour24, endMin)
                     

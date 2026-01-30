@@ -26,7 +26,7 @@ fun RoundedCornerCard(
     ),
     elevation: CardElevation = CardDefaults.cardElevation(),
     border: BorderStroke? = null,
-    paddingValues: PaddingValues = PaddingValues(vertical = 1.dp, horizontal = 15.dp),
+    paddingValues: PaddingValues = PaddingValues(vertical = 2.5.dp, horizontal = 15.dp),
     onClick: () -> Unit = {},
     content: @Composable ColumnScope.() -> Unit
 ) {

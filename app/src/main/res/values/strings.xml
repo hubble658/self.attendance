@@ -26,6 +26,7 @@
     <string name="calendar">Calendar</string>
     <string name="cancel">Cancel</string>
     <string name="changelogs">Changelogs</string>
+    <string name="changelogs_v2_2_0">Added fully native Dark Mode support with system follow option.\nFixed UI padding across all screens for a more balanced look.\nImplemented a modern Card Based UI for better content organization.\nEnhanced accessibility and smooth animations.</string>
     <string name="changelogs_v2_0_0">Added Class Timetable Notifications Feature! \nGet notified exactly when your class is scheduled to start.\nReliable alarms even when app is closed.\nMark attendance directly from notification (Attended/Missed).\nFixed various bugs and improved performance.</string>
     <string name="changelogs_v1_1_0">Fixed some color values in color palette selection\nFixed some UI margins\nAdded prerelease build update checker</string>
     <string name="changelogs_v1_2_0">Improved color scheme in high contrast dark theme\nAdded what\'s new bottomsheet to show changelogs after an update\nCode optimisations</string>
@@ -47,6 +48,7 @@
     <string name="customisation">Customisation</string>
     <string name="daily_reminder_to_mark_attendance">Daily reminder to mark attendance</string>
     <string name="dark_theme">Dark theme</string>
+    <string name="des_dark_theme">Choose between light, dark, or system theme</string>
     <string name="default_language">Default language</string>
     <string name="delete_confirmation">Are you sure you want to delete this?</string>
     <string name="delete_subject">Delete Subject</string>
@@ -186,17 +188,17 @@
     <string name="des_persistent_notifications">Keep notifications visible until you take action</string>
 
     <string-array name="month_names">
-        <item>April</item>
-        <item>August</item>
-        <item>December</item>
-        <item>February</item>
         <item>January</item>
-        <item>July</item>
-        <item>June</item>
+        <item>February</item>
         <item>March</item>
+        <item>April</item>
         <item>May</item>
-        <item>November</item>
-        <item>October</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
         <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
     </string-array>
 </resources>

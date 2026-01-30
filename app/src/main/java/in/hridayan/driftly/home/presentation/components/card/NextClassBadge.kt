@@ -27,7 +27,7 @@ fun NextClassBadge(
         
         if (nextClassText != null) {
             Row(
-                modifier = Modifier.padding(top = 4.dp),
+                modifier = Modifier.padding(top = 2.dp),
                 horizontalArrangement = Arrangement.spacedBy(4.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {

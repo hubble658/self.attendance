@@ -13,9 +13,12 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -63,8 +66,9 @@ fun CardStyleA(
     Row(
         modifier = modifier
             .fillMaxWidth()
+            .height(90.dp)  // Fixed height for consistent card size
             .background(backgroundColor)
-            .padding(horizontal = 20.dp, vertical = 16.dp)
+            .padding(top = 8.dp, bottom = 12.dp, start = 20.dp, end = 20.dp)
             .animateContentSize(
                 animationSpec = tween(
                     durationMillis = 500, easing = FastOutSlowInEasing
@@ -73,7 +77,12 @@ fun CardStyleA(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(15.dp)
     ) {
-        Column(modifier = Modifier.weight(1f)) {
+        Column(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight(),
+            verticalArrangement = Arrangement.Center
+        ) {
             SubjectText(
                 subject = subject,
                 subjectCode = subjectCode,
@@ -93,10 +102,14 @@ fun CardStyleA(
             )
         } else {
             if (isTotalCountZero) ErrorIcon(onClick = onErrorIconClicked)
-            else CircularProgressWithText(progress = progress)
+            else CircularProgressWithText(
+                progress = progress,
+                modifier = Modifier.size(48.dp)  // Increased from default ~40dp
+            )
         }
     }
 }
+
 
 @SuppressLint("DefaultLocale")
 @Composable
@@ -138,7 +151,8 @@ fun CardStyleB(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(20.dp)
+                    .height(90.dp)
+                    .padding(top = 8.dp, bottom = 12.dp, start = 20.dp, end = 20.dp)
                     .animateContentSize(
                         animationSpec = tween(
                             durationMillis = 500, easing = FastOutSlowInEasing
@@ -147,7 +161,12 @@ fun CardStyleB(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(15.dp)
             ) {
-                Column(modifier = Modifier.weight(1f)) {
+                Column(
+                    modifier = Modifier
+                        .weight(1f)
+                        .fillMaxHeight(),
+                    verticalArrangement = Arrangement.Center
+                ) {
                     SubjectText(
                         subject = subject,
                         subjectCode = subjectCode
@@ -181,6 +200,7 @@ fun CardStyleB(
 fun BaseCard(
     modifier: Modifier = Modifier,
     cornerRadius: Dp,
+    customShape: androidx.compose.foundation.shape.RoundedCornerShape? = null,
     onClick: () -> Unit = {},
     onLongClick: () -> Unit,
     content: @Composable () -> Unit
@@ -203,12 +223,14 @@ fun BaseCard(
         }
     }
     
+    val cardShape = customShape ?: RoundedCornerShape(cornerRadius)
+    
     Card(
         modifier = modifier
             .fillMaxWidth()
             .widthIn(min = 380.dp)
             .scale(scale)
-            .clip(RoundedCornerShape(cornerRadius))
+            .clip(cardShape)
             .combinedClickable(
                 enabled = true, 
                 onClick = {
@@ -217,7 +239,7 @@ fun BaseCard(
                 }, 
                 onLongClick = onLongClick
             ),
-        shape = RoundedCornerShape(cornerRadius),
+        shape = cardShape,
     ) {
         content()
     }

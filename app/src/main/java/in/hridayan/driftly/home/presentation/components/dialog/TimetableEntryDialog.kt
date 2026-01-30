@@ -58,11 +58,19 @@ fun TimetableEntryDialog(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 16.dp, vertical = 24.dp),
+                        .padding(top = 34.dp, start = 16.dp, end = 16.dp, bottom = 24.dp),
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    IconButton(onClick = onDismiss) {
+                    // Circular Close Button
+                    IconButton(
+                        onClick = onDismiss,
+                        modifier = Modifier
+                            .background(
+                                color = MaterialTheme.colorScheme.surfaceVariant,
+                                shape = CircleShape
+                            )
+                    ) {
                         Icon(
                             Icons.Default.Close,
                             contentDescription = "Close",
@@ -76,8 +84,8 @@ fun TimetableEntryDialog(
                         modifier = Modifier,
                         shape = RoundedCornerShape(20.dp),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = MaterialTheme.colorScheme.primaryContainer,
-                            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                            containerColor = MaterialTheme.colorScheme.primary,
+                            contentColor = MaterialTheme.colorScheme.onPrimary
                         ),
                         elevation = ButtonDefaults.buttonElevation(
                             defaultElevation = 0.dp,
@@ -97,7 +105,7 @@ fun TimetableEntryDialog(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 24.dp)
-                        .padding(bottom = 24.dp),
+                        .padding(top = 10.dp, bottom = 24.dp),
                     verticalArrangement = Arrangement.spacedBy(4.dp)
                 ) {
                     Text(
@@ -187,30 +195,31 @@ fun TimetableEntryDialog(
                             }
                             
                             item {
-                                Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                                Column(verticalArrangement = Arrangement.spacedBy(5.dp)) {
                                     daySchedules.sortedBy { it.startTime }.forEachIndexed { index, schedule ->
                                 val isFirst = index == 0
                                 val isLast = index == daySchedules.size - 1
                                 val isOnly = daySchedules.size == 1
                                 
+                                // Grouped card styling - matching home screen subject cards
                                 val shape = when {
                                     isOnly -> RoundedCornerShape(25.dp)
                                     isFirst -> RoundedCornerShape(
                                         topStart = 25.dp, topEnd = 25.dp,
-                                        bottomStart = 2.dp, bottomEnd = 2.dp
+                                        bottomStart = 10.dp, bottomEnd = 10.dp
                                     )
                                     isLast -> RoundedCornerShape(
-                                        topStart = 2.dp, topEnd = 2.dp,
+                                        topStart = 10.dp, topEnd = 10.dp,
                                         bottomStart = 25.dp, bottomEnd = 25.dp
                                     )
-                                    else -> RoundedCornerShape(2.dp)
+                                    else -> RoundedCornerShape(10.dp)
                                 }
                                 
-                                // ZERO ELEVATION Card - Same color as Add Class bottom sheet
+                                // Card with color matching subject cards
                                 Surface(
                                     modifier = Modifier.fillMaxWidth(),
                                     shape = shape,
-                                    color = MaterialTheme.colorScheme.surface,
+                                    color = MaterialTheme.colorScheme.surfaceContainer,
                                     tonalElevation = 0.dp,
                                     shadowElevation = 0.dp
                                 ) {
@@ -292,8 +301,8 @@ fun TimetableEntryDialog(
                     modifier = Modifier,
                     shape = RoundedCornerShape(28.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = MaterialTheme.colorScheme.primaryContainer,
-                        contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                        containerColor = MaterialTheme.colorScheme.primary,
+                        contentColor = MaterialTheme.colorScheme.onPrimary
                     ),
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 0.dp,

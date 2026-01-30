@@ -9,20 +9,15 @@ object CardCornerShape {
     val FIRST_CARD = RoundedCornerShape(
         topStart = 25.dp,
         topEnd = 25.dp,
-        bottomStart = 4.dp,
-        bottomEnd = 4.dp
+        bottomStart = 10.dp,
+        bottomEnd = 10.dp
     )
 
-    val MIDDLE_CARD = RoundedCornerShape(
-        topStart = 4.dp,
-        topEnd = 4.dp,
-        bottomStart = 4.dp,
-        bottomEnd = 4.dp
-    )
+    val MIDDLE_CARD = RoundedCornerShape(10.dp)
 
     val LAST_CARD = RoundedCornerShape(
-        topStart = 4.dp,
-        topEnd = 4.dp,
+        topStart = 10.dp,
+        topEnd = 10.dp,
         bottomStart = 25.dp,
         bottomEnd = 25.dp
     )

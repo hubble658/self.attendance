@@ -1,0 +1,81 @@
+Configuration on demand is an incubating feature.
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :app:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :app:mergeReleaseNativeLibs UP-TO-DATE
+> Task :app:stripReleaseDebugSymbols UP-TO-DATE
+> Task :app:extractReleaseNativeSymbolTables UP-TO-DATE
+> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:checkReleaseDuplicateClasses UP-TO-DATE
+> Task :app:mergeReleaseArtProfile UP-TO-DATE
+> Task :app:buildKotlinToolingMetadata UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:generateReleaseBuildConfig UP-TO-DATE
+> Task :app:checkReleaseAarMetadata UP-TO-DATE
+> Task :app:processReleaseNavigationResources UP-TO-DATE
+> Task :app:compileReleaseNavigationResources UP-TO-DATE
+> Task :app:generateReleaseResValues UP-TO-DATE
+> Task :app:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :app:extractReleaseSupportedLocales UP-TO-DATE
+> Task :app:generateReleaseLocaleConfig UP-TO-DATE
+> Task :app:generateReleaseResources UP-TO-DATE
+> Task :app:mergeReleaseResources UP-TO-DATE
+> Task :app:packageReleaseResources UP-TO-DATE
+> Task :app:parseReleaseLocalResources UP-TO-DATE
+> Task :app:createReleaseCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksRelease UP-TO-DATE
+> Task :app:processReleaseMainManifest UP-TO-DATE
+> Task :app:processReleaseManifest UP-TO-DATE
+> Task :app:processReleaseManifestForPackage UP-TO-DATE
+> Task :app:processReleaseResources UP-TO-DATE
+> Task :app:javaPreCompileRelease UP-TO-DATE
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:mergeReleaseStartupProfile UP-TO-DATE
+> Task :app:mergeReleaseShaders UP-TO-DATE
+> Task :app:compileReleaseShaders NO-SOURCE
+> Task :app:generateReleaseAssets UP-TO-DATE
+> Task :app:mergeReleaseAssets UP-TO-DATE
+> Task :app:compressReleaseAssets UP-TO-DATE
+> Task :app:extractReleaseVersionControlInfo UP-TO-DATE
+> Task :app:validateSigningRelease UP-TO-DATE
+> Task :app:writeReleaseAppMetadata UP-TO-DATE
+> Task :app:writeReleaseSigningConfigVersions UP-TO-DATE
+> Task :app:kspReleaseKotlin
+> Task :app:kaptGenerateStubsReleaseKotlin
+> Task :app:kaptReleaseKotlin UP-TO-DATE
+> Task :app:compileReleaseKotlin
+w: file:///C:/my%20all%20apps%20that%20i%20have%20built/attendance%20app/Driftly/app/src/main/java/in/hridayan/driftly/core/data/database/SubjectDatabase.kt:38:22 'fun fallbackToDestructiveMigration(): RoomDatabase.Builder<SubjectDatabase>' is deprecated. Replace by overloaded version with parameter to indicate if all tables should be dropped or not.
+w: file:///C:/my%20all%20apps%20that%20i%20have%20built/attendance%20app/Driftly/app/src/main/java/in/hridayan/driftly/settings/presentation/components/NotificationModeInfoDialog.kt:60:17 'fun Divider(modifier: Modifier = ..., thickness: Dp = ..., color: Color = ...): Unit' is deprecated. Renamed to HorizontalDivider.
+
+> Task :app:compileReleaseJavaWithJavac
+> Task :app:hiltAggregateDepsRelease UP-TO-DATE
+> Task :app:hiltJavaCompileRelease
+> Task :app:processReleaseJavaRes UP-TO-DATE
+> Task :app:mergeReleaseJavaResource UP-TO-DATE
+> Task :app:generateReleaseLintVitalReportModel
+> Task :app:transformReleaseClassesWithAsm
+> Task :app:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :app:expandReleaseArtProfileWildcards
+> Task :app:lintVitalAnalyzeRelease
+> Task :app:minifyReleaseWithR8
+
+> Task :app:lintVitalReportRelease
+Lint found no errors or warnings
+
+29 errors/warnings were listed in the baseline file (C:\my all apps that i have built\attendance app\Driftly\app\lint-baseline.xml) but not found in the project; perhaps they have been fixed?
+
+Note: The baseline was created using a different target/variant than it was checked against.
+Creation variant: lint
+Current variant: lintVitalRelease
+
+> Task :app:lintVitalRelease
+> Task :app:compileReleaseArtProfile
+> Task :app:convertShrunkResourcesToBinaryRelease
+> Task :app:optimizeReleaseResources
+> Task :app:packageRelease
+> Task :app:createReleaseApkListingFileRedirect
+> Task :app:assembleRelease
+
+BUILD SUCCESSFUL in 8m 11s
+57 actionable tasks: 17 executed, 40 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.0.0/userguide/configuration_cache_enabling.html

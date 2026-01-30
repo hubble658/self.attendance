@@ -162,11 +162,15 @@ fun AddSubjectDialog(
                         )
                         
                         val timetableButtonInteraction = remember { MutableInteractionSource() }
-                        FilledTonalButton(
+                        Button(
                             onClick = { showTimetableDialog = true },
                             modifier = Modifier
                                 .fillMaxWidth(),
-                            ) {
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = MaterialTheme.colorScheme.primary,
+                                contentColor = MaterialTheme.colorScheme.onPrimary
+                            )
+                        ) {
                             Icon(
                                 painter = painterResource(id = android.R.drawable.ic_menu_my_calendar),
                                 contentDescription = null

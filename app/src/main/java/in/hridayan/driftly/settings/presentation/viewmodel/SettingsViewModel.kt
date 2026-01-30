@@ -3,6 +3,7 @@ package `in`.hridayan.driftly.settings.presentation.viewmodel
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import androidx.appcompat.app.AppCompatDelegate
 import android.provider.Settings
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -36,6 +37,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -71,6 +73,15 @@ class SettingsViewModel @Inject constructor(
 
     fun loadSettings() {
         viewModelScope.launch {
+            // Migration for version 16 to set new requested defaults
+            val savedVersion = settingsRepository.getInt(SettingsKeys.SAVED_VERSION_CODE).first()
+            if (savedVersion < 16) {
+                settingsRepository.setInt(SettingsKeys.THEME_MODE, AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+                settingsRepository.setBoolean(SettingsKeys.HIGH_CONTRAST_DARK_MODE, true)
+                settingsRepository.setBoolean(SettingsKeys.DYNAMIC_COLORS, true)
+                settingsRepository.setInt(SettingsKeys.SAVED_VERSION_CODE, 16)
+            }
+
             val lookAndFeel = settingsRepository.getLookAndFeelPageList()
             val settings = settingsRepository.getSettingsPageList()
             val about = settingsRepository.getAboutPageList()

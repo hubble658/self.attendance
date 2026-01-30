@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -260,55 +261,45 @@ fun CalendarScreen(
         val schedules by homeViewModel.getSchedulesForSubject(subjectId)
             .collectAsState(initial = emptyList())
 
-        LazyColumn(
-            modifier = Modifier.padding(it),
-            verticalArrangement = Arrangement.spacedBy(20.dp),
-            flingBehavior = ScrollableDefaults.flingBehavior()
+        Column(
+            modifier = Modifier
+                .padding(it)
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.spacedBy(20.dp)
         ) {
-            item {
-            Card(
+            CalendarCanvas(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 15.dp),
-                shape = RoundedCornerShape(25.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.surfaceContainer
-                ),
-                elevation = CardDefaults.cardElevation(
-                    defaultElevation = 0.dp
-                )
-            ) {
-                CalendarCanvas(
-                    modifier = Modifier.padding(20.dp),
-                    year = year,
-                    month = month,
-                    markedDates = markedDates,
-                    streakMap = streakMap,
-                    onStatusChange = onStatusChange,
-                    onNavigate = { newYear, newMonth ->
-                        viewModel.updateMonthYear(newYear, newMonth)
-                        viewModel.saveMonthYearForSubject(subjectId)
-                    },
-                    onResetMonth = {
-                        viewModel.resetYearMonthToCurrent()
-                        viewModel.saveMonthYearForSubject(subjectId)
-                    }
-                )
-            }
-            }
+                year = year,
+                month = month,
+                markedDates = markedDates,
+                streakMap = streakMap,
+                onStatusChange = onStatusChange,
+                onNavigate = { newYear, newMonth ->
+                    viewModel.updateMonthYear(newYear, newMonth)
+                    viewModel.saveMonthYearForSubject(subjectId)
+                },
+                onResetMonth = {
+                    viewModel.resetYearMonthToCurrent()
+                    viewModel.saveMonthYearForSubject(subjectId)
+                }
+            )
 
-            item {
-                Column(
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    // Overall Attendance Button
-                    Button(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 15.dp),
-                        onClick = {
-                            weakHaptic()
-                            isMonthlyMode = false
+            // Add spacing between calendar and buttons
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Column(
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                // Overall Attendance Button
+                Button(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 15.dp),
+                    onClick = {
+                        weakHaptic()
+                        isMonthlyMode = false
                             showSubjectAttendanceDataBottomSheet = true
                         },
                         shape = RoundedCornerShape(40.dp),
@@ -373,9 +364,8 @@ fun CalendarScreen(
                         }
                     }
                 }
-            }
 
-            item {
+            // Insight Card
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -419,72 +409,8 @@ fun CalendarScreen(
                     }
                 }
             }
-            }
 
-            if (schedules.isNotEmpty()) {
-                item {
-                    Column(verticalArrangement = Arrangement.spacedBy(20.dp)) {
-                        Text(
-                            text = "Weekly Schedule",
-                            style = MaterialTheme.typography.titleLarge,
-                            fontWeight = FontWeight.Bold,
-                            color = MaterialTheme.colorScheme.onSurface,
-                            modifier = Modifier.padding(horizontal = 25.dp)
-                        )
 
-                        val groupedByDay = schedules.groupBy { it.dayOfWeek }.toSortedMap()
-                        groupedByDay.forEach { (day, daySchedules) ->
-                            Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-                                // Day Header Chip
-                                Surface(
-                                    color = MaterialTheme.colorScheme.tertiaryContainer,
-                                    shape = RoundedCornerShape(8.dp),
-                                    modifier = Modifier
-                                        .padding(horizontal = 25.dp)
-                                        .padding(bottom = 6.dp)
-                                ) {
-                                    Text(
-                                        text = getDayName(day),
-                                        style = MaterialTheme.typography.labelMedium,
-                                        fontWeight = FontWeight.Bold,
-                                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
-                                        color = MaterialTheme.colorScheme.onTertiaryContainer
-                                    )
-                                }
-
-                                val sorted = daySchedules.sortedBy { it.startTime }
-                                sorted.forEachIndexed { index, schedule ->
-                                    val isFirst = index == 0
-                                    val isLast = index == sorted.size - 1
-                                    val isOnly = sorted.size == 1
-
-                                    val shape = when {
-                                        isOnly -> RoundedCornerShape(25.dp)
-                                        isFirst -> RoundedCornerShape(
-                                            topStart = 25.dp, topEnd = 25.dp,
-                                            bottomStart = 2.dp, bottomEnd = 2.dp
-                                        )
-                                        isLast -> RoundedCornerShape(
-                                            topStart = 2.dp, topEnd = 2.dp,
-                                            bottomStart = 25.dp, bottomEnd = 25.dp
-                                        )
-                                        else -> RoundedCornerShape(2.dp)
-                                    }
-
-                                    TimetableCardItem(
-                                        schedule = schedule,
-                                        shape = shape,
-                                        modifier = Modifier.padding(horizontal = 25.dp)
-                                    )
-                                }
-                            }
-                        }
-                        
-                        // Bottom padding to ensure last item is visible above navigation bar/FAB
-                        Spacer(Modifier.height(100.dp))
-                    }
-                }
-            }
         }
         
         // Bottom Sheets OUTSIDE LazyColumn
@@ -565,8 +491,8 @@ private fun TimetableCardItem(
             }
             
             Surface(
-                color = MaterialTheme.colorScheme.secondaryContainer,
-                shape = RoundedCornerShape(8.dp)
+                color = MaterialTheme.colorScheme.primaryContainer,
+                shape = RoundedCornerShape(25.dp)
             ) {
                 Text(
                     text = `in`.hridayan.driftly.core.utils.TimeUtils.formatDuration(
@@ -574,7 +500,7 @@ private fun TimetableCardItem(
                     ),
                     style = MaterialTheme.typography.labelMedium,
                     fontWeight = FontWeight.Medium,
-                    color = MaterialTheme.colorScheme.onSecondaryContainer,
+                    color = MaterialTheme.colorScheme.onPrimaryContainer,
                     modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
                 )
             }

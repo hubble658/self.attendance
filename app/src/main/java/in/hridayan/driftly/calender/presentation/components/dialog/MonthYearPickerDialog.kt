@@ -118,7 +118,7 @@ fun MonthYearPickerDialog(
                             .heightIn(max = maxHeight)
                             .verticalScroll(rememberScrollState())
                     ) {
-                        months.forEach { month ->
+                        months.forEachIndexed { index, month ->
                             DropdownMenuItem(
                                 modifier = Modifier,
                                 text = {
@@ -134,7 +134,7 @@ fun MonthYearPickerDialog(
                                 },
                                 onClick = {
                                     weakHaptic()
-                                    selectedMonth = months.indexOf(month)
+                                    selectedMonth = index
                                     expandedMonth = false
                                 })
                         }

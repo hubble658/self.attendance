@@ -13,11 +13,6 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
-import androidx.compose.animation.core.LinearEasing
-import androidx.compose.animation.core.animateFloat
-import androidx.compose.animation.core.infiniteRepeatable
-import androidx.compose.animation.core.rememberInfiniteTransition
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
@@ -34,20 +29,23 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.ExtendedFloatingActionButton
-import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.material3.Text
 import androidx.compose.material3.animateFloatingActionButton
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -62,11 +60,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.draw.rotate
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -121,16 +116,7 @@ fun HomeScreen(
     val totalProgress = totalPresent.toFloat() / totalCount.toFloat()
     val totalProgressText = "${String.format("%.0f", totalProgress * 100)}%"
 
-    // Infinite rotation for gear icon
-    val infiniteTransition = rememberInfiniteTransition(label = "gear_rotation")
-    val rotation by infiniteTransition.animateFloat(
-        initialValue = 0f,
-        targetValue = 360f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(durationMillis = 3000, easing = LinearEasing)
-        ),
-        label = "gear_rotation"
-    )
+
 
     val progressColor = lerp(
         start = MaterialTheme.colorScheme.error,
@@ -229,7 +215,7 @@ fun HomeScreen(
             LazyColumn(
                 state = listState,
                 modifier = Modifier.fillMaxWidth(),
-                verticalArrangement = Arrangement.spacedBy(15.dp),
+                verticalArrangement = Arrangement.spacedBy(5.dp), // Changed from 15.dp to 5.dp for grouped appearance
                 contentPadding = PaddingValues(
                     top = innerPadding.calculateTopPadding(),
                     bottom = innerPadding.calculateBottomPadding() + 85.dp, // Space for button
@@ -237,7 +223,7 @@ fun HomeScreen(
                     end = 0.dp
                 ),
             ) {
-            item {
+                item {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -254,21 +240,24 @@ fun HomeScreen(
 
                     Spacer(modifier = Modifier.weight(1f))
 
-                    Image(
-                        painter = painterResource(R.drawable.ic_settings),
-                        contentDescription = null,
-                        colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onSurface),
-                        modifier = Modifier
-                            .rotate(rotation)
-                            .clickable(
-                                interactionSource = remember { MutableInteractionSource() },
-                                indication = null,
-                                onClick = {
-                                    scope.launch { drawerState.open() }
-                                    weakHaptic()
-                                }
+                    Surface(
+                        onClick = {
+                            scope.launch { drawerState.open() }
+                            weakHaptic()
+                        },
+                        shape = CircleShape,
+                        color = MaterialTheme.colorScheme.primary,
+                        contentColor = MaterialTheme.colorScheme.onPrimary,
+                        modifier = Modifier.size(42.dp)
+                    ) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
+                                contentDescription = "Open Settings",
+                                modifier = Modifier.size(20.dp)
                             )
-                    )
+                        }
+                    }
                 }
             }
 
@@ -331,13 +320,44 @@ fun HomeScreen(
                     .collectAsState(initial = SubjectAttendance())
 
                 val progress = counts.presentCount.toFloat() / counts.totalCount.toFloat()
+                
+                // Calculate grouped card corner radius
+                val isFirst = index == 0
+                val isLast = index == subjects.size - 1
+                val isOnly = subjects.size == 1
+                
+                val cornerRadius = when {
+                    isOnly -> 25.dp // Single card - all corners rounded
+                    isFirst -> 25.dp // First card - will use custom shape
+                    isLast -> 25.dp // Last card - will use custom shape
+                    else -> 10.dp // Middle cards - small corners
+                }
+                
+                // Determine the shape based on position
+                val cardShape = when {
+                    isOnly -> RoundedCornerShape(25.dp)
+                    isFirst -> RoundedCornerShape(
+                        topStart = 25.dp,
+                        topEnd = 25.dp,
+                        bottomStart = 10.dp,
+                        bottomEnd = 10.dp
+                    )
+                    isLast -> RoundedCornerShape(
+                        topStart = 10.dp,
+                        topEnd = 10.dp,
+                        bottomStart = 25.dp,
+                        bottomEnd = 25.dp
+                    )
+                    else -> RoundedCornerShape(10.dp)
+                }
 
                 SubjectCard(
                     modifier = Modifier
                         .padding(horizontal = 15.dp)
                         .animateItem(),
                     cardStyle = LocalSettings.current.subjectCardStyle,
-                    cornerRadius = 25.dp,
+                    cornerRadius = cornerRadius,
+                    customShape = cardShape,
                     subjectId = subjects[index].id,
                     subject = subjects[index].subject,
                     subjectCode = subjects[index].subjectCode,

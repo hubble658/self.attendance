@@ -91,6 +91,12 @@ object SettingsProvider {
 
     val lookAndFeelPageList: List<PreferenceGroup> = listOf(
         uncategorizedItems(
+            nullPreferenceItem(
+                key = SettingsKeys.DARK_THEME,
+                titleResId = R.string.dark_theme,
+                descriptionResId = R.string.des_dark_theme,
+                iconVector = Icons.Outlined.DarkMode
+            ),
             boolPreferenceItem(
                 key = SettingsKeys.DYNAMIC_COLORS,
                 titleResId = R.string.dynamic_colors,

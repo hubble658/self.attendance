@@ -125,13 +125,25 @@ class HomeViewModel @Inject constructor(
         }
 
         viewModelScope.launch {
-            val isSubjectExists = subjectRepository.isSubjectExists(_subject.value.trim()).first()
+            // Get the current subject to compare names
+            val currentSubject = subjectRepository.getSubjectById(subjectId).first()
+            val newName = _subject.value.trim()
+            val currentName = currentSubject?.subject ?: ""
+            
+            // Only check if subject exists if the name has actually changed
+            val nameChanged = newName != currentName
+            val isSubjectExists = if (nameChanged) {
+                subjectRepository.isSubjectExists(newName).first()
+            } else {
+                false // Name hasn't changed, so no conflict
+            }
+            
             if (isSubjectExists) {
                 _subjectError.value = SubjectError.AlreadyExists
             } else {
                 subjectRepository.updateSubject(
                     subjectId = subjectId,
-                    newName = _subject.value.trim(),
+                    newName = newName,
                     newCode = _subjectCode.value.trim().takeIf { it.isNotBlank() },
                     histogramLabel = _histogramLabel.value.trim().takeIf { it.isNotBlank() }
                 )

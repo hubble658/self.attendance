@@ -95,7 +95,8 @@ fun BooleanPreferenceItemView(
     if (item.type == SettingsType.Switch) {
         RoundedCornerCard(
             modifier = Modifier.fillMaxWidth(),
-            roundedCornerShape = roundedShape
+            roundedCornerShape = roundedShape,
+            paddingValues = androidx.compose.foundation.layout.PaddingValues(vertical = 1.5.dp, horizontal = 15.dp)
         )
         {
             Row(

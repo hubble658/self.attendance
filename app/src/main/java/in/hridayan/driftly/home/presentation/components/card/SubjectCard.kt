@@ -51,6 +51,7 @@ fun SubjectCard(
     viewModel: HomeViewModel = hiltViewModel(),
     isDemoCard: Boolean = false,
     cornerRadius: Dp = 25.dp,
+    customShape: androidx.compose.foundation.shape.RoundedCornerShape? = null,
     cardStyle: Int = SubjectCardStyle.CARD_STYLE_A,
 ) {
     val weakHaptic = LocalWeakHaptic.current
@@ -105,6 +106,7 @@ fun SubjectCard(
     BaseCard(
         modifier = modifier,
         cornerRadius = cornerRadius,
+        customShape = customShape,
         onClick = handleClick,
         onLongClick = handleLongClick,
     ) {
