@@ -34,14 +34,15 @@ Unlike traditional apps that only show percentages, Self Attendance provides an 
 
 ---
 
-## 🚀 New in v2.2.0: Timetable Notification System
+## 🚀 New in v2.2.0: Native Dark Mode + Refined Card UI
 
-The latest update introduces a highly requested, fully automated notification engine.
+The latest update brings a suite of UI/UX improvements and highly requested theme options.
 
-*   **Exact-Time Alerts**: Notifications trigger precisely at the start of your class using Android's `AlarmManager` API, bypassing standard battery optimization delays.
-*   **Interactive Actions**: Mark your attendance directly from the notification shade. Options for **"Attended"** and **"Missed"** allow for instant database updates without unlocking the phone or opening the app.
-*   **Reliable Persistence**: The system automatically reschedules all alarms upon device reboot or app updates, ensuring no class is ever forgotten.
-*   **Conflict Handling**: Intelligently manages overlapping schedules and delivers distinct alerts for simultaneous events.
+*   **Native Dark Mode**: Full support for Dark Theme with "Follow System" capabilities and High Contrast OLED mode.
+*   **Modern Card UI**: Re-engineered the subject and settings cards for a cleaner, more organized aesthetic.
+*   **Balanced Spacing**: Fixed padding and alignment issues across the home screen, sidebar, and settings for a premium feel.
+*   **Vertical Centering**: Subject cards now intelligently center content regardless of the information displayed.
+*   **Performance**: Optimized transitions and fixed scroll-reservation issues in the navigation drawer.
 
 ---
 
